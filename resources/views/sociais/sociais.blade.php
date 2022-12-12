@@ -96,7 +96,7 @@
 
         var rectangle = svgContainer.append("rect")
       .attr("x", 185)
-      .attr("y", 175)
+      .attr("y", 275)
       .attr('fill', 'black')
       .attr("width", 20)
       .attr("height", 3);
