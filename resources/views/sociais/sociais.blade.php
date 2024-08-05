@@ -54,7 +54,7 @@
       /*var rectangle = svgContainer.append("rect")
       .attr("x", 175)
       .attr("y", 220)
-      .attr('fill', 'blue')
+      .attr('fill', 'purple')
       .attr("width", 50)
       .attr("height", 50);*/
 
