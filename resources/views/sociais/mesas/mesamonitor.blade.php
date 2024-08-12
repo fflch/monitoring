@@ -19,7 +19,7 @@ var text = svgContainer.append('text')
             .attr('r', 10)
             .attr('stroke', 'black')
             //logica do computador do monitor
-                  @if(empty($mesa_monitor_equipamento1->username))
+                  @if(empty($sociais_mesa_monitor_equipamento1->username))
                         .attr('fill', 'red');
                   @else
                         .attr('fill', 'green');

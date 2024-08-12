@@ -20,7 +20,7 @@ var text = svgContainer.append('text')
             .attr('r', 10)
             .attr('stroke', 'black')
             //logica do computador 1
-                  @if(empty($mesa7_equipamento1->username))
+                  @if(empty($sociais_mesa7_equipamento1->username))
                         .attr('fill', 'red');
                   @else
                         .attr('fill', 'green');
@@ -40,7 +40,7 @@ var text = svgContainer.append('text')
             .attr('r', 10)
             .attr('stroke', 'black')
             //logica do computador 2
-                  @if(empty($mesa7_equipamento2->username))
+                  @if(empty($sociais_mesa7_equipamento2->username))
                         .attr('fill', 'red');
                   @else
                         .attr('fill', 'green');
@@ -61,7 +61,7 @@ var text = svgContainer.append('text')
             .attr('r', 10)
             .attr('stroke', 'black')
             //logica do computador 3
-                  @if(empty($mesa7_equipamento3->username))
+                  @if(empty($sociais_mesa7_equipamento3->username))
                         .attr('fill', 'red');
                   @else
                         .attr('fill', 'green');
@@ -81,7 +81,7 @@ var text = svgContainer.append('text')
             .attr('r', 10)
             .attr('stroke', 'black')
             //logica do computador 4
-                  @if(empty($mesa7_equipamento4->username))
+                  @if(empty($sociais_mesa7_equipamento4->username))
                         .attr('fill', 'red');
                   @else
                         .attr('fill', 'green');

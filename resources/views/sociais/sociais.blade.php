@@ -50,14 +50,6 @@
       .text('ENTRADA')
       .attr ('fill', 'black'); 
 
-      //impressora da sala
-      /*var rectangle = svgContainer.append("rect")
-      .attr("x", 175)
-      .attr("y", 220)
-      .attr('fill', 'purple')
-      .attr("width", 50)
-      .attr("height", 50);*/
-
       //Impressora da sala
         var rectangle = svgContainer.append("rect")
       .attr("x", 170)
