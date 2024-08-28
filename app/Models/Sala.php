@@ -12,7 +12,7 @@ class Sala extends Model
     
     protected $fillable = 
     [
-        'nome'
+        'nome','altura','largura'
     ];
 
     public function equipamentos(){

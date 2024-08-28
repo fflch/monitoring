@@ -17,6 +17,8 @@ class CreateSalasTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nome');
+	    $table->integer('altura')->default(0);
+	    $table->integer('largura')->default(0);
         });
     }
 
