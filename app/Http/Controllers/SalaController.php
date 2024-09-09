@@ -40,7 +40,7 @@ public function store(SalaRequest $request)
 public function show(Sala $sala)
 {
     return view('salas.show',[
-        'sala' => $sala
+        'sala' => $sala	
     ]);
 }
 

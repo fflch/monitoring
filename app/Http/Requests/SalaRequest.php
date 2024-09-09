@@ -26,6 +26,8 @@ class SalaRequest extends FormRequest
     public function rules(){
         $rules = [
             'nome' => 'required',
+	    'altura' => 'required',
+	    'largura' => 'required'
         ];
        
         return $rules;
