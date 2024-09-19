@@ -19,4 +19,8 @@ class Sala extends Model
         return $this->hasMany(Equipamento::class);
     }
 
+    public function mesas(){
+        return $this->hasMany(Mesa::class);
+    }
+
 }
