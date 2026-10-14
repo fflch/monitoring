@@ -6,9 +6,10 @@ use App\Http\Controllers\SalaController;
 use App\Http\Controllers\MesaController;
 use App\Http\Controllers\TesteController;
 
-Route::get('status/index', [StatusController::class,'index']);
+Route::get('status', [StatusController::class,'index']);
 
 //Rotas para salas
+Route::get('salas', [SalaController::class, 'index']);
 Route::get('salas/index', [SalaController::class,'index']);
 Route::get('salas/create', [SalaController::class,'create']);
 Route::post('salas/store', [SalaController::class,'store']);
@@ -18,10 +19,11 @@ Route::patch('salas/update/{sala}', [SalaController::class,'update']);
 Route::delete('salas/delete/{sala}', [SalaController::class,'destroy']);
 
 //Rotas para mesas
-
-Route::get('mesas/index', [MesaController::class,'index']);
+Route::get('mesas', [MesaController::class, 'index']);
+Route::get('mesas/show/{mesa}', [MesaController::class, 'show']);
 Route::get('mesas/create', [MesaController::class,'create']);
 Route::post('mesas/store', [MesaController::class,'store']);
+
 //Route::get('show');
 Route::get('mesas/edit/{mesa}',[MesaController::class,'edit']);
 Route::patch('mesas/update/{mesa}', [MesaController::class,'update']);

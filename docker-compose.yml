@@ -1,0 +1,75 @@
+services:
+  monitoring:
+    build: .
+    image: monitoring:latest
+    container_name: monitoring
+    ports:
+      - "8000:80"
+    depends_on:
+      - mariadb
+    networks:
+      - monitoring-network
+    volumes:
+      - ./:/var/www/html
+    environment:
+      HOME: /tmp
+    user: "${UID:-1000}:${GID:-1000}"
+
+  mariadb:
+    image: mariadb:11
+    container_name: monitoring_mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: monitoring
+      MYSQL_USER: monitoring
+      MYSQL_PASSWORD: monitoring
+      MYSQL_ROOT_PASSWORD: monitoring
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - monitoring-network
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: monitoring_phpmyadmin
+    restart: always
+    depends_on:
+      - mariadb
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mariadb
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: monitoring
+    networks:
+      - monitoring-network
+
+  selenium:
+    image: selenium/standalone-chrome
+    container_name: monitoring_selenium
+    ports:
+      - "7900:7900"
+    networks:
+      - monitoring-network
+    shm_size: 2gb
+
+  # No /etc/hosts do seu computador colocar a linha `127.0.0.1 auth.local`
+  # particularidades do protocolo oAuth1 usado na USP
+  senhaunica-faker:
+    image: uspdev/senhaunica-faker
+    container_name: monitoring_senhaunica-faker
+    ports:
+      - "3141:3141"
+    environment:
+          - APP_URL=http://auth.local:3141
+    networks:
+      monitoring-network:
+        aliases:
+          - auth.local
+
+networks:
+  monitoring-network:
+
+volumes:
+  mariadb_data:
