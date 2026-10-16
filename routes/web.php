@@ -7,6 +7,7 @@ use App\Http\Controllers\MesaController;
 use App\Http\Controllers\TesteController;
 
 Route::get('status', [StatusController::class,'index']);
+Route::get('/', [StatusController::class,'index'])->name('home');
 
 //Rotas para salas
 Route::get('salas', [SalaController::class, 'index']);
